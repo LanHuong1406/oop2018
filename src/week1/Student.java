@@ -1,8 +1,12 @@
-package week1;
+﻿package week1;
 
 public class Student {
 
     // TODO: khai báo các thuộc tính cho Student
+    private String id;
+    private String name;
+    private String group;
+    private String email;
 
     // TODO: khai báo các phương thức getter, setter cho Student
 
