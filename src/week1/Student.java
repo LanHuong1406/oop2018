@@ -9,12 +9,51 @@ public class Student {
     private String email;
 
     // TODO: khai báo các phương thức getter, setter cho Student
+    
+      public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     /**
      * Constructor 1
      */
-    Student() {
+    public Student() {
         // TODO:
+
+        id = "000";
+        name = "Student";
+        group = "K60CC";
+        email = "uet@vnu.edu.vn";
+
     }
 
     /**
