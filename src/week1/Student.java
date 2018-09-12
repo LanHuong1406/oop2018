@@ -88,7 +88,7 @@ public class Student {
 
     String getInfo() {
         // TODO:
-//
+
        return ("\n"+name+"\n"+id+"\n"+group+"\n"+email);
  
 
