@@ -51,7 +51,7 @@ public class Student {
 
         id = "000";
         name = "Student";
-        group = "K60CC";
+        group = "INT22041";
         email = "uet@vnu.edu.vn";
 
     }
@@ -64,6 +64,12 @@ public class Student {
      */
     Student(String n, String sid, String em) {
         // TODO:
+
+       name = n;
+        id = sid;
+        email = em;
+        group = "INT22041";
+
     }
 
     /**
@@ -72,10 +78,19 @@ public class Student {
      */
     Student(Student s) {
         // TODO:
+
+      name = s.name;
+        id = s.id;
+        group = s.group;
+        email = s.email;
+
     }
 
     String getInfo() {
         // TODO:
-        return null; // xóa dòng này sau khi cài đặt
+//
+       return ("\n"+name+"\n"+id+"\n"+group+"\n"+email);
+ 
+
     }
 }
