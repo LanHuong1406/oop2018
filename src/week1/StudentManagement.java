@@ -1,4 +1,4 @@
-package week1;
+﻿package week1;
 
 public class StudentManagement {
 
@@ -19,5 +19,27 @@ public class StudentManagement {
 
     public static void main(String[] args) {
         // TODO:
+       Student p = new Student();
+       Student p1 = new Student();
+
+       p1.setName("Nguyen Lan Huong");
+       p1.setId("17020820");
+       p1.setGroup("IE4K62");
+       p1.setEmail("nguyenlanhuong@gmail.com");
+      
+       System.out.println(p1.getName());
+       System.out.println(p1.getInfo());
+      
+       Student q1 = new Student();
+       System.out.println(q1.getInfo());
+
+       Student q2 = new Student("Nguyen Lan Huong","17020820","lanhuong@gmail.com");
+       System.out.println(q2.getInfo());
+
+       
+       Student q3 = new Student(q2);
+       System.out.println(q3.getInfo());
+
+
     }
 }
