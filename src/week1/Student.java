@@ -1,22 +1,15 @@
-﻿package week1;
+package week1;
 
 public class Student {
 
-    // TODO: khai báo các thuộc tính cho Student
-    private String id;
+    // TODO: khai b�o c�c thu?c t�nh cho Student
     private String name;
+    private String id;
     private String group;
     private String email;
 
-    // TODO: khai báo các phương thức getter, setter cho Student
-    
-      public String getId() {
-        return id;
-    }
+    // TODO: khai b�o c�c ph??ng th?c getter, setter cho Student
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -24,6 +17,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getGroup() {
@@ -42,15 +43,14 @@ public class Student {
         this.email = email;
     }
 
-
     /**
      * Constructor 1
      */
     public Student() {
         // TODO:
 
-        id = "000";
         name = "Student";
+        id = "000";
         group = "INT22041";
         email = "uet@vnu.edu.vn";
 
@@ -66,10 +66,9 @@ public class Student {
         // TODO:
 
        name = n;
-        id = sid;
-        email = em;
-        group = "INT22041";
-
+       id = sid;
+       email = em;
+       group = "INT22041";
     }
 
     /**
@@ -80,9 +79,9 @@ public class Student {
         // TODO:
 
       name = s.name;
-        id = s.id;
-        group = s.group;
-        email = s.email;
+      id = s.id;
+      group = s.group;
+      email = s.email;
 
     }
 
