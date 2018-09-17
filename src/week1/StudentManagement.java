@@ -1,6 +1,7 @@
 package week1;
 
 public class StudentManagement {
+    public static Student[] array = new Student[100];
 
     // TODO: khai báo thu?c tính students là array ch?a các ??i t??ng thu?c l?p Student (max. 100)
 
@@ -14,11 +15,40 @@ public class StudentManagement {
 
     void studentsByGroup() {
         // TODO:
+        int dem = array.length;
+        System.out.println("Danh sach sinh vien lop INT22041:");
+        for (int i = 0 ; i < dem; i++) {
+            if (array[i].getGroup() == "INT22041") {
+                System.out.println(array[i].getInfo());
+            }
+        }
+
+         System.out.println("Danh sach sinh vien lop INT22042:");
+            for (int i = 0 ; i < dem ; i++) {
+                if (array[i].getGroup() == "INT20042") {
+                    System.out.println(array[i].getInfo());
+                }
+            }
+
+
     }
 
     void removeStudent(String id) {
         // TODO:
+        int dem = array.length;
+        int i;
+        for ( i = 0 ; i < dem ; i++){
+            if(array[i].getId().equals(id)){
+                break;
+            }
+        }
+        for (int j = i ; j < dem - 1 ; j++){
+            array[j] = array[j+1];
+        }
+        dem--;
     }
+
+
 
     public static void main(String[] args) {
         // TODO:
@@ -45,14 +75,31 @@ public class StudentManagement {
 
         Student sv1 =new Student();
         sv1.setGroup("INT22041");
+        sv1.setName("Nguyen Huong");
+        sv1.setId("17020820");
         Student sv2 =new Student();
         sv2.setGroup("INT22041");
+        sv2.setName("Nguyen Lan");
+        sv2.setId("17020346");
         Student sv3 =new Student();
         sv3.setGroup("INT22042");
+        sv3.setName("Nguyen Hang");
+        sv3.setId("17020930");
 
         StudentManagement m = new StudentManagement();
         System.out.println(m.sameGroup(sv1,sv2));
         System.out.println(m.sameGroup(sv1,sv3));
+
+        array[0] = sv1;
+        array[1] = sv2;
+        array[2] = sv3;
+        
+
+        m.removeStudent("17020820");
+        for (int i = 0 ; i < array.length ; i++)
+            System.out.println(array[i].getName());
+
+
 
 
 
