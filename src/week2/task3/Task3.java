@@ -6,7 +6,8 @@ public class Task3 {
 }
 
 //TODO: khai báo 3 class tương ứng với 3 đối tượng thực tế ở dưới
-public class conMeo{
+// Doi tuong 1 la con Meo
+class conMeo{
     private String ten;
     private String thuocloai;
     private int tuoi;
@@ -41,17 +42,17 @@ public class conMeo{
         this.tuoi = 3;
     }
 
-    public mieuTa(){
+    public void mieuTa(){
         System.out.println(ten + " Co mau long trang va den, thuoc loai meo "+ thuocloai);
-        System.out.println("Hien tai meo" + ten ", duoc " + tuoi " tuoi va da duoc nhan nuoi");
+        System.out.println("Hien tai meo" + ten +", duoc " + tuoi +" tuoi va da duoc nhan nuoi");
     }
 
     public boolean sosanh(conMeo m1, conMeo m2){
         return (m1.getTuoi() == m2.getTuoi());
     }
 }
-
-public class person{
+// Doi tuong 2 la hoc sinh
+class hocsinh{
     private String ten;
     private String diachi;
     private int tuoi;
@@ -89,7 +90,7 @@ public class person{
         this.truong = truong;
     }
 
-    public person(){
+    public hocsinh(){
         ten = "Nguyen Lan Huong";
         diachi = "Ha Noi";
         tuoi = 19;
@@ -97,17 +98,17 @@ public class person{
 
     }
 
-    public thongTin(){
+    public void thongTin(){
         System.out.println(ten + " sinh ngay 14/06/1999 tai " + diachi + " tuoi " + tuoi);
         System.out.println("Hien tai dang hoc tai truong " + truong);
     }
 
-    public boolean soSanhsv(person p1, person p2){
+    public boolean soSanhsv(hocsinh p1, hocsinh p2){
         return (p1.getTruong().equals(p2.getTruong()) && p1.getTuoi() == p2.getTuoi());
     }
 }
-
-public class giaoVien{
+// Doi tuong 3 la giao vien
+class giaoVien{
     private String ten;
     private String monhoc;
     private String truongday;
