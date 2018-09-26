@@ -43,11 +43,7 @@ public class Fraction {
         Fraction chia = new Fraction(T,M);
         return chia;
     }
-
-    public static int rutGon(int x , int y){
-        return (y == 0)?x:(rutGon(y,x%y));
-    }
-
+    
     public static void In(int x, int y){
         if(x == 0)
             System.out.println(0);
@@ -64,37 +60,4 @@ public class Fraction {
         return false;
     }
 
-    public static void main(String[] args) {
-
-        Fraction ps1 = new Fraction(2,3);
-        Fraction ps2 =new Fraction(4,6);
-        if(ps1.denominator != 0 && ps2.denominator!=0) {
-            //ham cong
-            Fraction tong = ps1.add(ps2);
-            int tem = rutGon(tong.numerator, tong.denominator);
-            Fraction.In(tong.numerator / tem, tong.denominator / tem);
-
-            //ham tru
-            Fraction sub = ps1.subtract(ps2);
-            int tem1 = rutGon(sub.numerator,sub.denominator);
-            Fraction.In(sub.numerator/tem1,sub.denominator/tem1);
-
-            //ham Nhan
-            Fraction mul = ps1.multiply(ps2);
-            int tem3 = rutGon(mul.numerator,mul.denominator);
-            Fraction.In(mul.numerator/tem3,mul.denominator/tem3);
-
-            //ham Chia
-            Fraction div = ps1.divide(ps2);
-            int tem4 = rutGon(div.numerator,div.denominator);
-            Fraction.In(div.numerator/tem4,div.denominator/tem4);
-        }
-        //ham so sanh
-        Fraction s1 = new Fraction(2,4);
-        Fraction s2 = new Fraction(1,2);
-        Fraction s3 = new Fraction(3,5);
-        System.out.println(s1.equals(s2));
-        System.out.println(s1.equals(s3));
-
-    }
 }
