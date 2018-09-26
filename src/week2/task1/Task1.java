@@ -4,12 +4,12 @@ public class Task1 {
 
     public static int gcd(int a, int b) {
         // TODO: Tính ước chung lớn nhất của 2 số a, b
-        while(b > 0){
-            int tem = a % b;
-            a = b;
-            b = tem;
+        int uc = 0;
+        for (int i = 1 ; i <= a || i <= b ; i++){
+            if( a % i == 0 && b % i == 0)
+                uc = i;
         }
-        return a;
+        return uc;
     }
 
     public static int fibonacci(int n) {
