@@ -61,7 +61,8 @@ public class Fraction {
         else System.out.println(x + "/" + y);
     }
 
-    public boolean equals(Fraction ps) {
+    public boolean equals(Object obj) {
+        Fraction ps = (Fraction)obj;
         if (this.denominator != 0 && ps.denominator != 0) {
             if (this.numerator * ps.denominator - this.denominator * ps.numerator == 0)
                 return true;

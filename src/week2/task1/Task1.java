@@ -20,12 +20,12 @@ public class Task1 {
     }
 
     public static void main(String[] args) {
-        int x = 2;
-        int y = 4;
+        int x = 6;
+        int y = 9;
         int uc = gcd(x,y);
         System.out.println(uc);
 
-        int a = 2;
+        int a = 0;
         int fi = fibonacci(a);
         System.out.println(fi);
     }
