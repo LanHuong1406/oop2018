@@ -30,7 +30,6 @@ public class Main {
         System.out.println("\n");
         Circle c = new Circle();
         c.setRadius(4);
-        System.out.println(c.getPI());
         System.out.println(c.getArea());
         System.out.println(c.getPerimeter());
         System.out.println(c.toString());
