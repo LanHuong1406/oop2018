@@ -22,14 +22,14 @@ public class Square extends Rectangle {
     }
 
     public void setWidth(double side){
-        System.out.println(side);
+        super.setWidth(side);
     }
 
     public void setLength(double side){
-        System.out.println(side);
+        super.setLenth(side);
     }
 
     public String toString(){
-        return null;
+        return super.toString();
     }
 }

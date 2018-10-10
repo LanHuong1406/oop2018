@@ -28,7 +28,11 @@ public class Shape {
         this.filled = filled;
     }
 
-    public String toString(){
-        return null;
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "color='" + color + '\'' +
+                ", filled=" + filled +
+                '}';
     }
 }

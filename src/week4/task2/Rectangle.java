@@ -47,6 +47,6 @@ public class Rectangle extends Shape {
     }
 
     public String toString(){
-        return null;
+        return super.toString() + ", Width: " + width + ", Length: " + lenth;
     }
 }

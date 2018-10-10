@@ -9,6 +9,7 @@ public class Main {
         System.out.println(sq1.isFilled());
         sq.setLength(3.5);
         sq.setWidth(3.5);
+        System.out.println(sq.toString());
 
         System.out.println("\n");
         Rectangle r = new Rectangle(2,5,"sky",true);
@@ -18,6 +19,7 @@ public class Main {
         r.setLenth(5);
         System.out.println(r.getArea());
         System.out.println(r.getPerimeter());
+        System.out.println(r.toString());
 
         System.out.println("\n");
         sq.setLength(2);
@@ -31,5 +33,11 @@ public class Main {
         System.out.println(c.getPI());
         System.out.println(c.getArea());
         System.out.println(c.getPerimeter());
+        System.out.println(c.toString());
+
+        System.out.println("\n");
+        Square square = new Square(4,"green",true);
+        System.out.println(square.toString());
+
     }
 }
