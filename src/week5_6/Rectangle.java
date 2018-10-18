@@ -4,8 +4,8 @@ package week5_6;
  * Created by CCNE on 17/10/2018.
  */
 public class Rectangle extends Shape {
-    private double width;
-    private double lenth;
+    private double width = 1.0;
+    private double lenth = 1.0;
 
     public Rectangle(){
 
@@ -16,9 +16,10 @@ public class Rectangle extends Shape {
         this.width = width;
     }
 
-    public Rectangle(double width ,double lenth, String color , boolean filled){
+    public Rectangle(double width ,double lenth, String color , boolean filled , Point p){
         this.width = width;
         this.lenth = lenth;
+        setPoint(p);
         setColor(color);
         setFilled(filled);
     }
@@ -47,6 +48,14 @@ public class Rectangle extends Shape {
     public double getPerimeter(){
         double C = 2 * (getWidth() + getLenth());
         return C;
+    }
+
+    public boolean ssRectangle(Shape r1){
+        Rectangle r = (Rectangle)r1;
+        if (this.getLenth() == r.getLenth() &&
+                this.getWidth() == r.getWidth() && this.getPoint() == r.getPoint())
+            return true;
+        return false;
     }
 
     public String toString(){

@@ -7,13 +7,18 @@ public class Square extends Rectangle {
     double side;
 
     public Square(){
-
+        super();
     }
 
-    public Square(double side, String color, boolean filled){
-        this.side = side;
-        setColor(color);
-        setFilled(filled);
+    public Square(double side, String color, boolean filled , Point p){
+        super(side,side,color,filled,p);
+    }
+
+    public boolean ssSquare(Shape q){
+        Square q1 = (Square) q;
+        if (this.getLenth() == q1.getWidth())
+            return true;
+        return false;
     }
 
     public double getSide() {

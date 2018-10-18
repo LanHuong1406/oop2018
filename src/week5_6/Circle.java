@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
  * Created by CCNE on 17/10/2018.
  */
 public class Circle extends Shape{
-    private double radius;
+    private double radius = 1.0;
     final double PI = 3.14;
 
     public Circle(){
@@ -17,8 +17,9 @@ public class Circle extends Shape{
         this.radius = radius;
     }
 
-    public Circle(double radius, String color , boolean filled){
+    public Circle(double radius, String color , boolean filled , Point p){
         this.radius = radius;
+        setPoint(p);
         setColor(color);
         setFilled(filled);
     }
@@ -44,7 +45,7 @@ public class Circle extends Shape{
         return x;
     }
 
-    public boolean kiemtra(Shape c1){
+    public boolean ssCircle(Shape c1){
         Circle c2 = (Circle)c1;
         if (c2.getRadius() == this.getRadius())
             return true;

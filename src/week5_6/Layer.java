@@ -11,6 +11,7 @@ public class Layer {
 
     public Layer(){
         this.shapes = new ArrayList<>();
+        this.visible = true;
     }
 
     public ArrayList<Shape> getShapes() {
@@ -29,35 +30,77 @@ public class Layer {
         this.visible = visible;
     }
 
+    public void addArray(Shape shape){
+        shapes.add(shape);
+    }
+
     //ham xoa tam giac
 
-    public int deTriangle(){
-        int dem = 0;
+    public void deTriangle(){
         for (int i = 0 ; i < shapes.size() ; i++ ){
             if (shapes.get(i) instanceof Triangle){
                 shapes.remove(i);
-                dem++;
+
                 i--;
             }
         }
-        return dem;
+
     }
 
     //ham xoa hinh tron
 
-    public int deCircle(){
-        int dem = 0;
+    public void deCircle(){
         for (int i = 0 ; i < shapes.size() ; i++ ){
             if (shapes.get(i) instanceof Circle){
                 shapes.remove(i);
-                dem++;
                 i--;
             }
+        }
+    }
+
+    public boolean kiemtraCircle(){
+        int dem = 0 ;
+        for (int i = 0 ; i < shapes.size() ; i++){
+            if (shapes.get(i) instanceof Circle){
+                dem++;
+            }
+        }
+        if (dem == 0)
+            return true;
+        return false;
+    }
+
+    public int kiemtraTriangle(){
+        int dem = 0 ;
+        for (int i = 0 ; i < shapes.size() ; i++ ){
+            if (shapes.get(i) instanceof Triangle)
+                dem++;
         }
         return dem;
     }
 
-    //
-    
+    //ham xoa cac hinh giong nhau
+
+    public void deleteShape() {
+        for (int i = 0; i < shapes.size(); i++) {
+            if (shapes.get(i) instanceof Circle) {
+                for (int j = 0; j < shapes.size() && j != i; j++) {
+                    if (((Circle) shapes.get(i)).ssCircle(shapes.get(j))) {
+                        shapes.remove(j);
+                    }
+                }
+            }
+
+            if (shapes.get(i) instanceof Rectangle){
+                if (shapes.get(i) instanceof Circle){
+                    for (int j = 0 ; j < shapes.size() && j != i ; j++ ){
+                        if (((Circle) shapes.get(i)).ssCircle(shapes.get(j))){
+                            shapes.remove(j);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
