@@ -3,17 +3,18 @@ package week9;
 import java.io.*;
 
 public class Utils {
-    public static void readContentFromFile(String path){
+    public static String readContentFromFile(String path){
         String s = "";
+        String s1 ="";
         File file = new File(path);
         if (!file.exists()){
-            System.out.println("Khong tim thay file!!!");
+            return "Khong tim thay file!!!";
         }
         try {
             FileReader reader = new FileReader(path);
             BufferedReader in = new BufferedReader(reader);
             while ((s = in.readLine()) != null){
-                System.out.println(s);
+                s1 += s + "\n";
             }
             in.close();
         } catch (FileNotFoundException e) {
@@ -21,9 +22,14 @@ public class Utils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return s1;
     }
 
     public static void writeContentToFile(String path){
+        File file1 = new File(path);
+        if (!file1.exists()){
+            System.out.println("khong tim thay file!!!");
+        }
         try {
             FileWriter file = new FileWriter(path);
             PrintWriter out = new PrintWriter(file);
@@ -42,7 +48,9 @@ public class Utils {
             String s = "\nKhong xoa cuoi file";
             String s1 = "\nKhong xoa";
             out.write(s);
+            out.println();
             out.write(s1);
+            out.println();
 
             out.close();
         } catch (IOException e) {
@@ -61,9 +69,9 @@ public class Utils {
     }
 
     public static void main(String[] args) {
-        readContentFromFile("C:\\baitap\\Week9.txt");
-       // writeContentToFile("C:\\baitap\\Week9.txt");
+        System.out.println(readContentFromFile("C:\\baitap\\Week9.txt"));
+        writeContentToFile("C:\\baitap\\Week9.txt");
         writeFile("C:\\baitap\\Week9.txt");
-        System.out.println(findFileByName("C:\\baitap","Week9.txt"));
+       System.out.println(findFileByName("C:\\baitap","Week.txt"));
     }
 }
