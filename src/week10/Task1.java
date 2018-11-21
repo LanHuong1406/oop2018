@@ -8,18 +8,56 @@ public class Task1 {
      static List<String> list = new LinkedList<>();
 
     public static List<String> getAllFunction(File path){
+        int dem1 = 0;
+        int dem2 = 0;
+        int t1 = 0;
+        int t2 = 0;
         String s ="";
+        String dong = "";
+        String d = "";
+        String f = "";
         if (path.exists()){
             try {
                 FileInputStream stream = new FileInputStream(path);
                 BufferedReader in = new BufferedReader(new InputStreamReader(stream));
                 while ((s = in.readLine()) != null){
-                    String[] dong = s.split("\\{");
-                    String d = dong[0].trim();
-                    if (d.contains("static")){
-                        list.add(d);
+                    dong += s + "\n";
+                }
+                System.out.println(dong.substring(0,100));
+                String[] d1 = dong.split(" ");
+
+                for (int j = 0 ; j < d1.length; j++ ){
+                    if (d1[j].equals("static")){
+
+                        for (int x = 0 ; x <= j ; x++){
+                            f += d1[x];
+                        }
+                        for (int i = f.length() + 1; i < dong.length(); i++ ){
+                            if (dong.charAt(i) == '{'){
+                                dem1++;
+                                if (dem1 == 1){
+                                    t1 = i;
+                                }
+                            }
+
+                            if (dong.charAt(i) == '}'){
+                                dem2++;
+                                if (dem1 == dem2){
+                                    t2 = i;
+                                }
+                            }
+
+                        }
+
+                        while (dem1 == dem2){
+                            list.add(dong.substring(t1 + 1, t2));
+                            dem1 = 0;
+                            dem2 = 0;
+                        }
+
                     }
                 }
+                System.out.println(dem1);
                 in.close();
 
             } catch (FileNotFoundException e) {
